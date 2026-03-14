@@ -1,0 +1,17 @@
+---
+import Layout from '../../layouts/Layout.astro'
+
+//all the weekly updates:
+const allMatchups = Object.values(import.meta.glob('../../content/*.md', { eager: true }));
+
+
+---
+
+<Layout>
+ This is the index page for our weekly updates:
+<ul>
+ {
+    allMatchups.map(matchup => <li><a href={`/weeklymatchups/${matchup.frontmatter.slug}`}>{matchup.frontmatter.title}</a></li>)
+ }
+ </ul>
+ </Layout>
