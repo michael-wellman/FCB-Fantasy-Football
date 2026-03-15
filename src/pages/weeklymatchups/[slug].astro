@@ -1,4 +1,6 @@
 ---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+
 export async function getStaticPaths() {
   const allMatchups = Object.values(import.meta.glob('../../content/*.md', { eager: true }));
   
@@ -11,3 +13,7 @@ export async function getStaticPaths() {
 const { slug } = Astro.params;
 const { title } = Astro.props;
 ---
+
+<BlogLayout>
+  BLOG PAGE
+</BlogLayout>
