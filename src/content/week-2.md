@@ -1,9 +1,9 @@
 ---
-title: "Week 12 Matchups"
+title: "Week 2 Matchups"
 slug: "week-2"
 date: "2024-09-05"
 ---
-```
+<!-- ```
 
 Now the follow up question — **why the square brackets on `[slug].astro`?**
 
@@ -17,4 +17,8 @@ pages/
 
 vs if you had named it:
 ```
-    └── week-2.astro     ← this would only ever be ONE page
+    └── week-2.astro     ← this would only ever be ONE page -->
+
+    <BLOGLAYOUT>
+        Week 2 Matchups: RUMBLE with the KIDDOS!
+    </BLOGLAYOUT>
