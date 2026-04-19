@@ -1,0 +1,135 @@
+/* ============================================
+   VARIABLES & DESIGN TOKENS
+   FCB Fantasy Football
+   ============================================ */
+
+/* --- Google Fonts Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600&family=DM+Mono:wght@400;500&display=swap');
+
+:root {
+
+  /* ----------------------------------------
+     COLORS - Brand (Houston Texans)
+     Primary:   Deep Navy  #00223d
+     Secondary: Battle Red #c9243f
+     Tertiary:  Steel Gray #a5acaf
+  ---------------------------------------- */
+  --color-primary:          #00223d;   /* Texans Deep Navy */
+  --color-primary-hover:    #003460;
+  --color-primary-muted:    #00223d25;
+
+  --color-secondary:        #c9243f;   /* Texans Battle Red */
+  --color-secondary-hover:  #a81c33;
+  --color-secondary-muted:  #c9243f25;
+
+  --color-tertiary:         #a5acaf;   /* Texans Steel Gray */
+  --color-tertiary-hover:   #8a9295;
+  --color-tertiary-muted:   #a5acaf25;
+
+  /* ----------------------------------------
+     COLORS - Neutral / Surface
+  ---------------------------------------- */
+  --color-bg:               #03202f;   /* Deepest navy - page background */
+  --color-surface:          #00223d;   /* Cards, panels - primary navy */
+  --color-surface-raised:   #003460;   /* Elevated surfaces */
+  --color-border:           #0a3a56;   /* Subtle dividers */
+  --color-border-strong:    #1a5272;   /* More visible borders */
+
+  /* ----------------------------------------
+     COLORS - Text
+  ---------------------------------------- */
+  --color-text:             #f0f4f8;   /* Primary body text */
+  --color-text-muted:       #a5acaf;   /* Secondary / metadata - reuse steel */
+  --color-text-faint:       #5a7080;   /* Placeholders, disabled */
+  --color-text-inverse:     #03202f;   /* Text on light backgrounds */
+
+  /* ----------------------------------------
+     COLORS - Semantic / Status
+  ---------------------------------------- */
+  --color-win:              #22c55e;   /* Green - wins */
+  --color-win-muted:        #22c55e20;
+  --color-loss:             #c9243f;   /* Battle Red - losses */
+  --color-loss-muted:       #c9243f20;
+  --color-tie:              #a5acaf;   /* Steel gray - ties */
+  --color-highlight:        #c9243f;   /* Battle Red for highlights/accents */
+
+  /* ----------------------------------------
+     TYPOGRAPHY - Font Families
+  ---------------------------------------- */
+   --font-display:   'Bebas Neue', 'Impact', sans-serif;       /* Headlines, hero text */
+   --font-subhead:   'Barlow Condensed', sans-serif;           /* Subheadings, labels, nav */
+   --font-body:      'Barlow', sans-serif;                     /* Body copy, UI */
+   --font-mono:      'DM Mono', 'Courier New', monospace;      /* Stats, scores, numbers */
+
+   --text-xs:    0.75rem;   /* 12px */
+   --text-sm:    0.875rem;  /* 14px */
+   --text-base:  1rem;      /* 16px */
+   --text-lg:    1.125rem;  /* 18px */
+   --text-xl:    1.5rem;    /* 24px */
+   --text-2xl:   2rem;      /* 32px */
+   --text-3xl:   2.5rem;    /* 40px */
+
+  /* ----------------------------------------
+     TYPOGRAPHY - Weight
+  ---------------------------------------- */
+  --font-normal:    400;
+  --font-medium:    500;
+  --font-semibold:  600;
+  --font-bold:      700;
+
+  /* ----------------------------------------
+     TYPOGRAPHY - Line Height
+  ---------------------------------------- */
+  --leading-tight:  1.1;
+  --leading-snug:   1.35;
+  --leading-normal: 1.6;
+  --leading-loose:  1.8;
+
+  /* ----------------------------------------
+     SPACING - Scale (base 4px)
+  ---------------------------------------- */
+  --space-2:    0.5rem;    /* 8px */
+   --space-4:    1rem;      /* 16px */
+   --space-6:    1.5rem;    /* 24px */
+   --space-8:    2rem;      /* 32px */
+   --space-12:   3rem;      /* 48px */
+   --space-16:   4rem;      /* 64px */
+   --space-24:   6rem;      /* 96px */
+
+  /* ----------------------------------------
+     LAYOUT
+  ---------------------------------------- */
+   --bp-tablet:    768px;
+   --bp-desktop:   1200px;
+   --bp-wide:      1600px;
+
+  --content-width:  720px;   /* Max width for article body text */
+
+  /* ----------------------------------------
+     BORDERS
+  ---------------------------------------- */
+  --radius-sm:    4px;
+  --radius-md:    8px;
+  --radius-lg:    12px;
+  --radius-xl:    16px;
+  --radius-full:  9999px;   /* Pills, badges */
+
+  --border-width:       1px;
+  --border-width-thick: 2px;
+
+  /* ----------------------------------------
+     SHADOWS
+  ---------------------------------------- */
+  --shadow-sm:  0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md:  0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-lg:  0 8px 24px rgba(0, 0, 0, 0.6);
+  --shadow-glow-primary:    0 0 20px rgba(0, 34, 61, 0.5);
+  --shadow-glow-secondary:  0 0 20px rgba(201, 36, 63, 0.4);
+
+  /* ----------------------------------------
+     TRANSITIONS
+  ---------------------------------------- */
+  --transition-fast:    150ms ease;
+  --transition-base:    250ms ease;
+  --transition-slow:    400ms ease;
+}
