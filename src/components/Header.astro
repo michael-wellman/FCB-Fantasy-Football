@@ -1,7 +1,46 @@
 ---
+
+
 ---
 
 <header>
-    <h1>FCB Fantasy Football League component</h1>
-    <p>Goal is to have this be a background image and some type of header - not sure</p>
+    <!-- Logo -->
+    <a href="/" class="logo" aria-label="FCB Fantasy Football Home">
+      <span class="logo-text">FCB</span>
+      <span class="logo-divider"></span>
+      <span class="logo-sub">Fantasy Football</span>
+    </a>
+
+    <button class="mobile-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    
+    <nav class="nav-mobile" aria-label="Mobile Navigation">
+    <ul>
+        <li><a href="/#matchups">Matchups</a></li>
+        <li><a href="/#standings">Standings</a></li>
+        <li><a href="/#stats">Stats</a></li>
+        <li><a href="/recap">Recaps</a></li>
+    </ul>
+    </nav>
+
+    <nav class="nav" aria-label="Primary Navigation">
+      <ul class="nav-list">
+        <li><a href="/#matchups">Matchups</a></li>
+        <li><a href="/#standings">Standings</a></li>
+        <li><a href="/#stats">Stats</a></li>
+        <li><a href="/recap">Recaps</a></li>
+      </ul>
+    </nav>
 </header>
+
+<script>
+  const toggle = document.querySelector('.mobile-toggle');
+  const nav = document.querySelector('.nav-mobile');
+
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('is-open');
+  });
+</script>
