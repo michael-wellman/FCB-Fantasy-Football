@@ -1,0 +1,239 @@
+/* ============================================
+   HEADER
+   Mobile first - FCB Fantasy Football
+   ============================================ */
+
+/* ----------------------------------------
+   Shell
+---------------------------------------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Red accent line at bottom of header */
+header::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-secondary) 20%,
+    var(--color-secondary) 80%,
+    transparent 100%
+  );
+  opacity: 0.7;
+}
+
+/* ----------------------------------------
+   Container
+---------------------------------------- */
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--container-xl);
+  margin-inline: auto;
+  padding: var(--space-4) var(--space-6);
+  height: 64px;
+}
+
+/* ----------------------------------------
+   Logo
+---------------------------------------- */
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.header__logo img {
+  height: 36px;
+  width: auto;
+}
+
+/* Fallback text logo if no image */
+.header__logo .logo-text {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  color: var(--color-secondary);
+  line-height: 1;
+  letter-spacing: 0.04em;
+  transition: color var(--transition-fast);
+}
+
+.header__logo .logo-divider {
+  display: block;
+  width: 2px;
+  height: 22px;
+  background-color: var(--color-border-strong);
+  flex-shrink: 0;
+}
+
+.header__logo .logo-sub {
+  font-family: var(--font-subhead);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.header__logo:hover .logo-text {
+  color: var(--color-secondary-hover);
+}
+
+.header__logo:hover .logo-sub {
+  color: var(--color-text);
+}
+
+/* ----------------------------------------
+   Nav Toggle (burger) - visible mobile only
+---------------------------------------- */
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-2);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast);
+  z-index: var(--z-modal);
+}
+
+.nav-toggle:hover {
+  background-color: var(--color-surface);
+}
+
+/* The three bars */
+.nav-toggle span:not(.sr-only) {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-text);
+  border-radius: var(--radius-full);
+  transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+/* Animate to X when open */
+.nav-toggle[aria-expanded="true"] span:not(.sr-only):nth-child(2) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] span:not(.sr-only):nth-child(3) {
+  opacity: 0;
+}
+.nav-toggle[aria-expanded="true"] span:not(.sr-only):nth-child(4) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ----------------------------------------
+   Main Nav - mobile (full screen overlay)
+---------------------------------------- */
+.main-nav {
+  position: fixed;
+  inset: 0;
+  background-color: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(100%);
+  transition: transform var(--transition-slow);
+  z-index: var(--z-dropdown);
+}
+
+.main-nav.is-open {
+  transform: translateX(0);
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+  padding: 0;
+  margin: 0;
+}
+
+.nav-list a {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color var(--transition-fast);
+}
+
+.nav-list a:hover {
+  color: var(--color-secondary);
+}
+
+/* ----------------------------------------
+   Desktop overrides
+---------------------------------------- */
+@media (min-width: 768px) {
+
+  /* Hide burger on desktop */
+  .nav-toggle {
+    display: none;
+  }
+
+  /* Reset nav from overlay to inline */
+  .main-nav {
+    position: static;
+    transform: none;
+    background: none;
+    display: block;
+  }
+
+  /* Horizontal nav list */
+  .nav-list {
+    flex-direction: row;
+    gap: var(--space-2);
+  }
+
+  .nav-list a {
+    font-family: var(--font-subhead);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-md);
+    position: relative;
+    transition: color var(--transition-fast), background-color var(--transition-fast);
+  }
+
+  .nav-list a::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: var(--space-3);
+    right: var(--space-3);
+    height: 2px;
+    background-color: var(--color-secondary);
+    transform: scaleX(0);
+    transition: transform var(--transition-base);
+    border-radius: var(--radius-full);
+  }
+
+  .nav-list a:hover {
+    color: var(--color-text);
+    background-color: var(--color-surface);
+  }
+
+  .nav-list a:hover::after {
+    transform: scaleX(1);
+  }
+}

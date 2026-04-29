@@ -18,3 +18,8 @@ pages/
 vs if you had named it:
 ```
     └── week-1.astro     ← this would only ever be ONE page
+
+
+
+
+    

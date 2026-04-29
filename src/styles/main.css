@@ -1,0 +1,7 @@
+/* FOUNDATION CSS */
+@import url('./reset.css');
+@import url('./variables.css');
+@import url('./global.css');
+
+/* COMPONENTS */
+@import url('./components/header.css');
